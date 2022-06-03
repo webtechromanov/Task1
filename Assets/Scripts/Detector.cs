@@ -5,16 +5,14 @@ using UnityEngine.Events;
 
 public class Detector : MonoBehaviour
 {
-    private float _maxVolume = 1f;
-    private float _minVolume = 0f;
-
-    public UnityAction<float> Entered;
+    public event UnityAction Entered;
+    public event UnityAction Exited;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
-            Entered?.Invoke(_maxVolume);
+            Entered?.Invoke();
         }
     }
 
@@ -22,7 +20,7 @@ public class Detector : MonoBehaviour
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
-            Entered?.Invoke(_minVolume);
+            Exited?.Invoke();
         }
     }
 }
