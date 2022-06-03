@@ -230,7 +230,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 60d8846e0913a584fbba1b80eb9f254f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 1042774946}
   - component: {fileID: 1042774945}
   - component: {fileID: 1042774948}
+  - component: {fileID: 1042774949}
   - component: {fileID: 1042774947}
   m_Layer: 0
   m_Name: Door
@@ -736,10 +737,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1042774943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7295e6edbb0acb1488ad105fafa52257, type: 3}
+  m_Script: {fileID: 11500000, guid: c5f715ff4ff228a4cb0f04a5b89ef547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audio: {fileID: 1042774948}
+  _entered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1042774949}
+        m_TargetAssemblyTypeName: Signaling, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &1042774948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -754,7 +769,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -836,6 +851,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1042774949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042774943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7295e6edbb0acb1488ad105fafa52257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audio: {fileID: 1042774948}
 --- !u!1 &1721844954
 GameObject:
   m_ObjectHideFlags: 0
